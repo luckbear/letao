@@ -1,0 +1,43 @@
+.product_order {
+    width: 100%;
+    height: 30px;
+    background: #eee;
+    text-align: center;
+    a {
+        display: block;
+        float: left;
+        width: 25%;
+        height: 100%;
+        line-height: 30px;
+        font-size: 11px;
+        color: #333;
+    }
+}
+
+.search_pro {
+    padding: 0 10px;
+    .proBox {
+        padding: 10px 5px;
+        margin-top: 10px;
+        display: block;
+        width: 48%;
+        float: left;
+        box-shadow: 0 0 5px #ccc;
+        text-align: center;
+        p {
+            font-size: 12px;
+            .nowPri {
+                color: red;
+            }
+            .oldPri {
+                text-decoration-line: line-through;
+            }
+        }
+        &:nth-child(2n) {
+            margin-left: 4%;
+        }
+        img {
+            width: 100%;
+        }
+    }
+}

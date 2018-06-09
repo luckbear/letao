@@ -1,0 +1,42 @@
+.product_order {
+  width: 100%;
+  height: 30px;
+  background: #eee;
+  text-align: center;
+}
+.product_order a {
+  display: block;
+  float: left;
+  width: 25%;
+  height: 100%;
+  line-height: 30px;
+  font-size: 11px;
+  color: #333;
+}
+.search_pro {
+  padding: 0 10px;
+}
+.search_pro .proBox {
+  padding: 10px 5px;
+  margin-top: 10px;
+  display: block;
+  width: 48%;
+  float: left;
+  box-shadow: 0 0 5px #ccc;
+  text-align: center;
+}
+.search_pro .proBox p {
+  font-size: 12px;
+}
+.search_pro .proBox p .nowPri {
+  color: red;
+}
+.search_pro .proBox p .oldPri {
+  text-decoration-line: line-through;
+}
+.search_pro .proBox:nth-child(2n) {
+  margin-left: 4%;
+}
+.search_pro .proBox img {
+  width: 100%;
+}

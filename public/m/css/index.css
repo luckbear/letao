@@ -1,0 +1,41 @@
+.mui-slider img {
+  width: 100%;
+}
+.lt_nav {
+  padding: 10px;
+}
+.lt_nav a {
+  display: block;
+  width: 33.33%;
+  float: left;
+}
+.lt_nav a img {
+  width: 100%;
+}
+.lt_product {
+  padding: 0 10px;
+}
+.lt_product .proBox {
+  padding: 10px 5px;
+  margin-top: 10px;
+  display: block;
+  width: 48%;
+  float: left;
+  box-shadow: 0 0 5px #ccc;
+  text-align: center;
+}
+.lt_product .proBox p {
+  font-size: 12px;
+}
+.lt_product .proBox p .nowPri {
+  color: red;
+}
+.lt_product .proBox p .oldPri {
+  text-decoration-line: line-through;
+}
+.lt_product .proBox:nth-child(2n) {
+  margin-left: 4%;
+}
+.lt_product .proBox img {
+  width: 100%;
+}

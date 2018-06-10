@@ -23,6 +23,7 @@
   float: left;
   box-shadow: 0 0 5px #ccc;
   text-align: center;
+  font-size: 14px;
 }
 .lt_product .proBox p {
   font-size: 12px;

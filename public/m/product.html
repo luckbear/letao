@@ -32,32 +32,6 @@
             <div class="lt_wraper">
                 <div class="mui-scroll-wrapper">
                     <div class="mui-scroll">
-                        <!--轮播图-->
-                        <div class="mui-slider">
-                            <div class="mui-slider-group">
-                                <div class="mui-slider-item">
-                                    <a href="#">
-                                        <img src="images/banner5.png" />
-                                    </a>
-                                </div>
-                                <div class="mui-slider-item">
-                                    <a href="#">
-                                        <img src="images/banner1.png" />
-                                    </a>
-                                </div>
-                                <div class="mui-slider-item">
-                                    <a href="#">
-                                        <img src="images/banner2.png" />
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="mui-slider-indicator">
-                                <div class="mui-indicator mui-active"></div>
-                                <div class="mui-indicator"></div>
-                                <div class="mui-indicator"></div>
-                                <div class="mui-indicator"></div>
-                            </div>
-                        </div>
 
                         <!-- 主体 -->
                         <div class="detail_body">
@@ -102,8 +76,25 @@
         </div>
     </div>
 
+    <!-- 轮播图渲染模板 -->
+    <script type="text/template" id="slideTpl">
+        <% for (var i=0;i<pic.length;i++){ %>
+             <div class="mui-slider">          
+                <div class="mui-slider-group">
+                    <div class="mui-slider-item">
+                        <a href="#">
+                            <img src="<%=pic[i].picAddr%>"/>
+                        </a>
+                    </div>
+                </div>
+                <div class="mui-slider-indicator">
+                    <div class="mui-indicator <%=i==0?'mui-active':''%>"></div>
+                </div>
+             </div>
+        <%}%>
+    </script>
 
-    <script type="text/template"></script>
+
     <script src="assets/mui/js/mui.min.js"></script>
     <script src="assets/zepto/zepto.min.js"></script>
     <script src="assets/artTemplate/template-native.js"></script>

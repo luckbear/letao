@@ -10,7 +10,7 @@ $(function(){
     
     //根据id渲染页面
     getProductDetail(key,function (data) {
-        console.log(data);       
+        $('.mui-scroll').html(template('slideTpl', data));      
     })
 })
 

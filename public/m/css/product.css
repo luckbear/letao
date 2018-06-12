@@ -1,0 +1,58 @@
+.lt_content .detail_body {
+  width: 100%;
+}
+.lt_content .detail_body .title {
+  border-top: 1px solid #ccc;
+  padding: 10px;
+}
+.lt_content .detail_body .price {
+  border-top: 1px solid #ccc;
+  padding: 10px;
+}
+.lt_content .detail_body .price::before {
+  content: "价格：";
+}
+.lt_content .detail_body .price .now_pri {
+  color: red;
+  font-size: 20px;
+}
+.lt_content .detail_body .price .old_pri {
+  font-size: 14px;
+  text-decoration: line-through;
+}
+.lt_content .detail_body .size {
+  border-top: 1px solid #ccc;
+  padding: 10px;
+}
+.lt_content .detail_body .size::before {
+  content: "尺码：";
+}
+.lt_content .detail_body .size span {
+  border: 1px solid #ccc;
+  width: 15px;
+  background: #f5f5f5;
+  margin-left: 2px;
+  padding: 3px;
+  font-size: 12px;
+}
+.lt_content .detail_body .size.active {
+  background: darkorange;
+}
+.lt_content .detail_body .count {
+  border-top: 1px solid #ccc;
+  padding: 10px;
+}
+.lt_content .detail_body .count::before {
+  content: "数量：";
+}
+.lt_content .detail_body .detail {
+  border-top: 1px solid #ccc;
+  padding: 10px;
+}
+.lt_content .detail_body .detail::before {
+  content: "详情：";
+}
+.lt_footer {
+  padding: 10px 0;
+  background: #f5f5f5;
+}

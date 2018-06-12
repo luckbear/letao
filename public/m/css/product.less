@@ -1,0 +1,60 @@
+.lt_content {
+    .detail_body {
+        width: 100%;
+        .title {
+            border-top: 1px solid #ccc;
+            padding: 10px;
+        }
+        .price {
+            border-top: 1px solid #ccc;
+            padding: 10px;
+            &::before{
+                content: "价格：";
+            }
+            .now_pri{
+                color: red;
+                font-size: 20px;
+            }
+            .old_pri {
+                font-size: 14px;
+                text-decoration: line-through;
+            }
+        }
+        .size {
+            border-top: 1px solid #ccc;
+            padding: 10px;
+            &::before {
+                content: "尺码：";
+            }
+            span {
+                border: 1px solid #ccc;
+                width: 15px;
+                background: rgb(245, 245, 245);
+                margin-left: 2px;
+                padding: 3px;
+                font-size: 12px;
+            }
+            &.active {
+                background: darkorange;
+            }
+        }
+        .count {
+            border-top: 1px solid #ccc;
+            padding: 10px;
+            &::before {
+                content: "数量：";
+            }
+        }
+        .detail {
+            border-top: 1px solid #ccc;
+            padding: 10px;
+            &::before {
+                content: "详情：";
+            }
+        }
+    }
+}
+.lt_footer {
+    padding: 10px 0;
+    background: #f5f5f5;
+}

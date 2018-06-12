@@ -13,8 +13,21 @@
   font-size: 11px;
   color: #333;
 }
+.product_order a.active {
+  color: red;
+}
 .search_pro {
   padding: 0 10px;
+}
+.search_pro .loading {
+  margin-top: 40px;
+  text-align: center;
+  animation: loading 1s linear infinite;
+}
+@keyframes loading {
+  to {
+    transform: rotate(360deg);
+  }
 }
 .search_pro .proBox {
   padding: 10px 5px;

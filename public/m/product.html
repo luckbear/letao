@@ -33,34 +33,7 @@
                 <div class="mui-scroll-wrapper">
                     <div class="mui-scroll">
 
-                        <!-- 主体 -->
-                        <div class="detail_body">
-                            <!-- 商品标题 -->
-                            <div class="title">
-                                <strong class="mui-ellipsis-2">李宁闪击篮球鞋驭帅10镭射队尚4男韦德之道空袭中高帮队尚3.5球鞋</strong>
-                            </div>
-                            <!-- 价格 -->
-                            <div class="price">
-                                <span class="now_pri">￥499</span>
-                                <span class="old_pri">￥699</span>
-                            </div>
-                            <!-- 尺码选择 -->
-                            <div class="size">
-                                <span>40</span>
-                            </div>
-                            <!-- 数量选择 -->
-                            <div class="count">
-                                <div class="mui-numbox">
-                                    <button class="mui-btn mui-btn-numbox-minus">-</button>
-                                    <input class="mui-input-numbox" type="text">
-                                    <button class="mui-btn mui-btn-numbox-plus">+</button>
-                                </div>
-                            </div>
-                            <!-- 详情 -->
-                            <div class="detail">
-                                <span>描述</span>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -76,22 +49,68 @@
         </div>
     </div>
 
-    <!-- 轮播图渲染模板 -->
+    <!--渲染模板 -->
     <script type="text/template" id="slideTpl">
-        <% for (var i=0;i<pic.length;i++){ %>
-             <div class="mui-slider">          
-                <div class="mui-slider-group">
-                    <div class="mui-slider-item">
-                        <a href="#">
-                            <img src="<%=pic[i].picAddr%>"/>
-                        </a>
+        <% if (!pic||pic.length==0) 
+            pic = [{'picAddr':'images/none.png'}]
+        %>
+            <!-- 轮播图 -->
+                <div class="mui-slider">
+                    <div class="mui-slider-group">
+                        <% for (var i=0;i<pic.length;i++){ %>
+                        <div class="mui-slider-item">
+                            <a href="#">
+                                <img src="<%=pic[i].picAddr%>" />
+                            </a>
+                        </div>
+                        <%}%>
+                    </div>
+                    <!-- 指示器 -->
+                    <div class="mui-slider-indicator">
+                        <% for (var i=0;i<pic.length;i++){ %>
+                        <div class="mui-indicator <%=i==0?'mui-active':''%>"></div>
+                        <%}%>
                     </div>
                 </div>
-                <div class="mui-slider-indicator">
-                    <div class="mui-indicator <%=i==0?'mui-active':''%>"></div>
-                </div>
-             </div>
-        <%}%>
+                <!-- 主体 -->
+                <div class="detail_body">
+                        <!-- 商品标题 -->
+                        <div class="title">
+                            <strong class="mui-ellipsis-2">
+                                <%=proName%>
+                            </strong>
+                        </div>
+                        <!-- 价格 -->
+                        <div class="price">
+                            <span class="now_pri">&yen;
+                                <%=price%>
+                            </span>
+                            <span class="old_pri">&yen;
+                                <%=oldPrice%>
+                            </span>
+                        </div>
+                        <!-- 尺码选择 -->
+                        <div class="size">
+                            <% var sizeArr = size.split('-');
+                                for (var i = parseInt(sizeArr[0]);i< parseInt(sizeArr[1]).length;i++){%>
+                                <span>i</span>
+                                <%}%>      
+                        </div> -->
+                        <!-- 数量选择 -->
+                        <div class="count">
+                            <div class="mui-numbox">
+                                <button class="mui-btn mui-btn-numbox-minus">-</button>
+                                <input class="mui-input-numbox" type="text">
+                                <button class="mui-btn mui-btn-numbox-plus">+</button>
+                            </div>
+                        </div>
+                        <!-- 详情 -->
+                        <div class="detail">
+                            <span>描述</span>
+                        </div>
+                    </div>
+            
+                
     </script>
 
 

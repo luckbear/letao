@@ -10,11 +10,22 @@ $(function(){
     
     //根据id渲染页面
     getProductDetail(key,function (data) {
-        console.log(data);
-        
-        $('.mui-scroll').html(template('slideTpl', data));      
-    })
+        $('.mui-scroll').html(template('slideTpl', data));   
+        $('.size').on('tap','span',function () {
+            $(this).addClass('active').siblings().removeClass('active');
+        });
+    });
+
+    //点击选中尺码
+
 })
+
+
+
+
+
+
+
 
 
 //获取ajax数据

@@ -51,12 +51,12 @@
 
     <!--渲染模板 -->
     <script type="text/template" id="slideTpl">
-        <% if (!pic||pic.length==0) 
-            pic = [{'picAddr':'images/none.png'}]
-        %>
             <!-- 轮播图 -->
                 <div class="mui-slider">
                     <div class="mui-slider-group">
+                        <% if (!pic||pic.length==0) 
+                            pic = [{'picAddr':'images/none.png'}]
+                        %>
                         <% for (var i=0;i<pic.length;i++){ %>
                         <div class="mui-slider-item">
                             <a href="#">
@@ -74,43 +74,44 @@
                 </div>
                 <!-- 主体 -->
                 <div class="detail_body">
-                        <!-- 商品标题 -->
-                        <div class="title">
-                            <strong class="mui-ellipsis-2">
-                                <%=proName%>
-                            </strong>
-                        </div>
-                        <!-- 价格 -->
-                        <div class="price">
-                            <span class="now_pri">&yen;
-                                <%=price%>
-                            </span>
-                            <span class="old_pri">&yen;
-                                <%=oldPrice%>
-                            </span>
-                        </div>
-                        <!-- 尺码选择 -->
-                        <div class="size">
-                            <% var sizeArr = size.split('-');
-                                for (var i = parseInt(sizeArr[0]);i< parseInt(sizeArr[1]).length;i++){%>
-                                <span>i</span>
-                                <%}%>      
-                        </div> -->
-                        <!-- 数量选择 -->
-                        <div class="count">
-                            <div class="mui-numbox">
-                                <button class="mui-btn mui-btn-numbox-minus">-</button>
-                                <input class="mui-input-numbox" type="text">
-                                <button class="mui-btn mui-btn-numbox-plus">+</button>
-                            </div>
-                        </div>
-                        <!-- 详情 -->
-                        <div class="detail">
-                            <span>描述</span>
+                    <!-- 商品标题 -->
+                    <div class="title">
+                        <strong class="mui-ellipsis-2">
+                            <%=proName%>
+                        </strong>
+                    </div>
+                    <!-- 价格 -->
+                    <div class="price">
+                        <span class="now_pri">&yen;
+                            <%=price%>
+                        </span>
+                        <span class="old_pri">&yen;
+                            <%=oldPrice%>
+                        </span>
+                    </div>
+                    <!-- 尺码选择 -->
+                    <div class="size">
+                        <% 
+                            var sizeArr = size.split('-');
+                            var start = sizeArr[0],end=sizeArr[1];
+                            for (var i = start;i < end; i ++) {
+                        %>
+                            <span><%=i%></span>
+                        <%}%>      
+                    </div>
+                    <!-- 数量选择 -->
+                    <div class="count">
+                        <div class="mui-numbox">
+                            <button class="mui-btn mui-btn-numbox-minus">-</button>
+                            <input class="mui-input-numbox" type="text">
+                            <button class="mui-btn mui-btn-numbox-plus">+</button>
                         </div>
                     </div>
-            
-                
+                    <!-- 详情 -->
+                    <div class="detail">
+                        <span><%= proDesc%></span>
+                    </div>
+                </div>        
     </script>
 
 

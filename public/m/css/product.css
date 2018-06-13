@@ -35,7 +35,7 @@
   padding: 3px;
   font-size: 12px;
 }
-.lt_content .detail_body .size.active {
+.lt_content .detail_body .size span.active {
   background: darkorange;
 }
 .lt_content .detail_body .count {

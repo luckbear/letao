@@ -39,6 +39,9 @@
             </div>
         </div>
 
+
+
+
         <!-- 底部 -->
         <div class="lt_footer">
             <a href="">
@@ -51,67 +54,72 @@
 
     <!--渲染模板 -->
     <script type="text/template" id="slideTpl">
-            <!-- 轮播图 -->
-                <div class="mui-slider">
-                    <div class="mui-slider-group">
-                        <% if (!pic||pic.length==0) 
+        <!-- 轮播图 -->
+        <div class="mui-slider">
+            <div class="mui-slider-group">
+                <% if (!pic||pic.length==0) 
                             pic = [{'picAddr':'images/none.png'}]
                         %>
-                        <% for (var i=0;i<pic.length;i++){ %>
+                    <% for (var i=0;i<pic.length;i++){ %>
                         <div class="mui-slider-item">
                             <a href="#">
                                 <img src="<%=pic[i].picAddr%>" />
                             </a>
                         </div>
                         <%}%>
-                    </div>
-                    <!-- 指示器 -->
-                    <div class="mui-slider-indicator">
-                        <% for (var i=0;i<pic.length;i++){ %>
-                        <div class="mui-indicator <%=i==0?'mui-active':''%>"></div>
-                        <%}%>
-                    </div>
-                </div>
-                <!-- 主体 -->
-                <div class="detail_body">
-                    <!-- 商品标题 -->
-                    <div class="title">
-                        <strong class="mui-ellipsis-2">
-                            <%=proName%>
-                        </strong>
-                    </div>
-                    <!-- 价格 -->
-                    <div class="price">
-                        <span class="now_pri">&yen;
-                            <%=price%>
-                        </span>
-                        <span class="old_pri">&yen;
-                            <%=oldPrice%>
-                        </span>
-                    </div>
-                    <!-- 尺码选择 -->
-                    <div class="size">
-                        <% 
+            </div>
+            <!-- 指示器 -->
+            <div class="mui-slider-indicator">
+                <% for (var i=0;i<pic.length;i++){ %>
+                    <div class="mui-indicator <%=i==0?'mui-active':''%>"></div>
+                    <%}%>
+            </div>
+        </div>
+        <!-- 主体 -->
+        <div class="detail_body">
+            <!-- 商品标题 -->
+            <div class="title">
+                <strong class="mui-ellipsis-2">
+                    <%=proName%>
+                </strong>
+            </div>
+            <!-- 价格 -->
+            <div class="price">
+                <span class="now_pri">&yen;
+                    <%=price%>
+                </span>
+                <span class="old_pri">&yen;
+                    <%=oldPrice%>
+                </span>
+            </div>
+            <!-- 尺码选择 -->
+            <div class="size">
+                <% 
                             var sizeArr = size.split('-');
                             var start = sizeArr[0],end=sizeArr[1];
                             for (var i = start;i < end; i ++) {
                         %>
-                            <span><%=i%></span>
-                        <%}%>      
-                    </div>
-                    <!-- 数量选择 -->
-                    <div class="count">
-                        <div class="mui-numbox">
-                            <button class="mui-btn mui-btn-numbox-minus">-</button>
-                            <input class="mui-input-numbox" type="text">
-                            <button class="mui-btn mui-btn-numbox-plus">+</button>
-                        </div>
-                    </div>
-                    <!-- 详情 -->
-                    <div class="detail">
-                        <span><%= proDesc%></span>
-                    </div>
-                </div>        
+                    <span>
+                        <%=i%>
+                    </span>
+                    <%}%>
+            </div>
+            <!-- 数量选择 -->
+            <div class="count">
+                <div class="mui-numbox" data-numbox-min ='1' data-numbox-max='<%=num%>'>
+                    <button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+                    <input class="mui-input-numbox" type="text" />
+                    <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+                </div>
+                <span>库存：<%=num%>双</span>
+            </div>
+            <!-- 详情 -->
+            <div class="detail">
+                <span>
+                    <%= proDesc%>
+                </span>
+            </div>
+        </div>
     </script>
 
 

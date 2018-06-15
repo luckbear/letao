@@ -1,3 +1,13 @@
+.lt_content .loading {
+  margin-top: 40px;
+  text-align: center;
+  animation: loading 1s linear infinite;
+}
+@keyframes loading {
+  to {
+    transform: rotate(360deg);
+  }
+}
 .lt_content .detail_body {
   width: 100%;
 }

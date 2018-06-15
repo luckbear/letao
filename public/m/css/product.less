@@ -1,4 +1,15 @@
 .lt_content {
+    .loading {
+        margin-top: 40px;
+        text-align: center;
+        animation: loading 1s linear infinite;
+        @keyframes loading {
+            from{};
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    }
     .detail_body {
         width: 100%;
         .title {

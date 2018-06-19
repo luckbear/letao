@@ -44,6 +44,7 @@ $(function () {
             num: $('.mui-input-numbox').val()
         };
 
+        
         //判断尺码、数量选择情况
         if (!data.size) {
             mui.toast('请选择尺码');
@@ -55,15 +56,16 @@ $(function () {
             return false;
         };
 
-        CT.getAjaxData({
+        CT.loginAjax({
             type: 'post',
             url: '/cart/addCart',
             data: data,
             beforeSend: function () {
-
+                
             },
-            success: function () {
-                if (data.success) {
+            
+            success: function (data) {
+                if (data.success) {                   
                     mui.confirm('加入购物车成功!', '是否去购物车', ['是', '否'], function (e) {
                         if (e.index == 0) {
                             location.href = 'cart.html'

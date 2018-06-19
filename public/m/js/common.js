@@ -18,23 +18,24 @@ CT.getCurrentKey = function () {
 }
 
 //ajax处理函数
-CT.getAjaxData = function (option) {
+CT.loginAjax = function (option) {
     $.ajax({
         type: option.type || 'get',
         url: option.url,
         data: option.data,
         dataType: option.dataType || 'json',
         beforeSend: function () {
-            option.beforeSend && option.beforeSend();
+            
         },
         success: function (data) {
-            if(data.error==400) {
-                location.href = 'login.html?returnUrl='+location.href;
+            if (data.error == 400) {
+                location.href = 'login.html?returnUrl=' + location.href;
+            } else {
+                option.success && option.success(data);
             }
-            option.success && option.success();
         },
-        error:function () {
-            option.error&&option.error();
+        error: function () {
+            option.error && option.error();
         }
     })
 };

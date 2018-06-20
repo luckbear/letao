@@ -40,7 +40,7 @@ $(function () {
                     if (location.search && location.search.indexOf('?returnUrl=')>-1) {
                         location.href=location.search.replace ('?returnUrl=','');
                     } else {
-                        location.href = 'index.html'
+                        location.href = 'acount.html'
                     }
                     
                 }

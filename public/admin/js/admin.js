@@ -26,7 +26,7 @@ $(function () {
     //注销框
     $('[data-logout]').on('click', function () {
         //插入模态框代码
-        $('.ad_side').before(['<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog">',
+        $('.ad_side').before(['<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" id = "logout">',
             '        <div class="modal-dialog" role="document">',
             '            <div class="modal-content">',
             '                <div class="modal-header">',
@@ -47,8 +47,10 @@ $(function () {
             '    </div>'
         ].join(""));
 
+        //显示模态框
+        $('#logout').modal('toggle');
         //点击确定的话，发送ajax请求注销
-        $('.modal .btn-primary').on('click', function () {
+        $('#logout .btn-primary').on('click', function () {
             $.ajax({
                 type: 'get',
                 url: '/employee/employeeLogout',
@@ -62,6 +64,12 @@ $(function () {
                     }
                 }
             })
+        })
+        // 点击取消的话，移除模态框
+        $('[data-dismiss]').on('click',function(){
+            $('.modal').modal('toggle');
+            $('.modal').remove();
+            $('.modal-backdrop').remove();
         })
 
     })
